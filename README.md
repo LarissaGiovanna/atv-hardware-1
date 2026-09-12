@@ -9,3 +9,7 @@ Atividade de Infraestrutura de Hardware feita em grupo (6 pessoas).
 ### Outros arquivos:
 - `conceito.md`: resposta à questão conceitual do tema, entre 5 e 10 linhas, com justificativa técnica
 - `README.md`: sobre do projeto
+
+## **OBS:**
+- Mandar uma pasta compactada com o nome temaNN_sobrenome1_sobrenome2.zip, onde o nome e sobrenome são os do representante do grupo.
+- Deixar os arquivos na raiz do projeto
