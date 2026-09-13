@@ -127,3 +127,284 @@ A = ~(~D3 ^ ~D2 ^ ~D1 ^ D0) v ~(~D3 ^ D2 ^ ~D1 ^ ~D0) v ~((D3 ^ D2) v (D3 ^ D1))
 
 //EXPRESSÂO FINAL:
 A = (D3 v D2 v ~D1 v ~D0) ^ (D3 v ~D2 v D1 v D0) ^ (~D3 v ~D2) ^ (~D3 v ~D1)
+```
+
+### *b*
+
+O segmento `b` fica aceso nos casos obtidos na tabela: `0, 1, 2, 3, 4, 7 e 8`.
+
+| Caso | Binário | Mintermo |
+|---|---|---|
+|0|0000|`~D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+|1|0001|`~D3 ^ ~D2 ^ ~D1 ^ D0`|
+|2|0010|`~D3 ^ ~D2 ^ D1 ^ ~D0`|
+|3|0011|`~D3 ^ ~D2 ^ D1 ^ D0`|
+|4|0100|`~D3 ^ D2 ^ ~D1 ^ ~D0`|
+|7|0111|`~D3 ^ D2 ^ D1 ^ D0`|
+|8|1000|`D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+
+Como os demais segmentos, `b` pode ser transcrito diretamente da tabela verdade:
+
+```c
+B = (~D3 ^ ~D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ ~D2 ^ ~D1 ^ D0)
+  v (~D3 ^ ~D2 ^ D1 ^ ~D0)
+  v (~D3 ^ ~D2 ^ D1 ^ D0)
+  v (~D3 ^ D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ D2 ^ D1 ^ D0)
+  v (D3 ^ ~D2 ^ ~D1 ^ ~D0)
+```
+
+### *c*
+
+O segmento `c` fica aceso nos casos obtidos na tabela: `0, 1, 3, 4, 5, 6, 7 e 8`.
+
+| Caso | Binário | Mintermo |
+|---|---|---|
+|0|0000|`~D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+|1|0001|`~D3 ^ ~D2 ^ ~D1 ^ D0`|
+|3|0011|`~D3 ^ ~D2 ^ D1 ^ D0`|
+|4|0100|`~D3 ^ D2 ^ ~D1 ^ ~D0`|
+|5|0101|`~D3 ^ D2 ^ ~D1 ^ D0`|
+|6|0110|`~D3 ^ D2 ^ D1 ^ ~D0`|
+|7|0111|`~D3 ^ D2 ^ D1 ^ D0`|
+|8|1000|`D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+
+```c
+C = (~D3 ^ ~D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ ~D2 ^ ~D1 ^ D0)
+  v (~D3 ^ ~D2 ^ D1 ^ D0)
+  v (~D3 ^ D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ D2 ^ ~D1 ^ D0)
+  v (~D3 ^ D2 ^ D1 ^ ~D0)
+  v (~D3 ^ D2 ^ D1 ^ D0)
+  v (D3 ^ ~D2 ^ ~D1 ^ ~D0)
+```
+
+### *d*
+
+O segmento `d` fica aceso nos casos obtidos na tabela: `0, 5, 6 e 8`.
+
+| Caso | Binário | Mintermo |
+|---|---|---|
+|0|0000|`~D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+|5|0101|`~D3 ^ D2 ^ ~D1 ^ D0`|
+|6|0110|`~D3 ^ D2 ^ D1 ^ ~D0`|
+|8|1000|`D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+
+```c
+D = (~D3 ^ ~D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ D2 ^ ~D1 ^ D0)
+  v (~D3 ^ D2 ^ D1 ^ ~D0)
+  v (D3 ^ ~D2 ^ ~D1 ^ ~D0)
+```
+
+### *e*
+
+O segmento `e` fica aceso nos casos obtidos na tabela: `0, 2, 6 e 8`.
+
+| Caso | Binário | Mintermo |
+|---|---|---|
+|0|0000|`~D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+|2|0010|`~D3 ^ ~D2 ^ D1 ^ ~D0`|
+|6|0110|`~D3 ^ D2 ^ D1 ^ ~D0`|
+|8|1000|`D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+
+```c
+E = (~D3 ^ ~D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ ~D2 ^ D1 ^ ~D0)
+  v (~D3 ^ D2 ^ D1 ^ ~D0)
+  v (D3 ^ ~D2 ^ ~D1 ^ ~D0)
+```
+
+> Para não confundir o segmento `e` com o sinal de erro `E`, nesta seção foi usado `E_seg` apenas como identificação da expressão do segmento `e`.
+
+### *f*
+
+O segmento `f` fica aceso nos casos obtidos na tabela: `0, 4, 5, 6 e 8`.
+
+| Caso | Binário | Mintermo |
+|---|---|---|
+|0|0000|`~D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+|4|0100|`~D3 ^ D2 ^ ~D1 ^ ~D0`|
+|5|0101|`~D3 ^ D2 ^ ~D1 ^ D0`|
+|6|0110|`~D3 ^ D2 ^ D1 ^ ~D0`|
+|8|1000|`D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+
+```c
+F = (~D3 ^ ~D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ D2 ^ ~D1 ^ ~D0)
+  v (~D3 ^ D2 ^ ~D1 ^ D0)
+  v (~D3 ^ D2 ^ D1 ^ ~D0)
+  v (D3 ^ ~D2 ^ ~D1 ^ ~D0)
+```
+
+### *g*
+
+A dedução de `g` é feita a partir dos casos em que o segmento está apagado, trabalhando primeiro com o complemento `~G` e, ao final, aplicando a Lei de De Morgan para obter `G`.
+
+Os casos considerados foram `0, 1, 7, 9, 10, 11, 12, 13, 14 e 15`.
+
+| Caso | Binário | Mintermo de `~G` |
+|---|---|---|
+|0|0000|`~D3 ^ ~D2 ^ ~D1 ^ ~D0`|
+|1|0001|`~D3 ^ ~D2 ^ ~D1 ^ D0`|
+|7|0111|`~D3 ^ D2 ^ D1 ^ D0`|
+|9|1001|`D3 ^ ~D2 ^ ~D1 ^ D0`|
+|10|1010|`D3 ^ ~D2 ^ D1 ^ ~D0`|
+|11|1011|`D3 ^ ~D2 ^ D1 ^ D0`|
+|12|1100|`D3 ^ D2 ^ ~D1 ^ ~D0`|
+|13|1101|`D3 ^ D2 ^ ~D1 ^ D0`|
+|14|1110|`D3 ^ D2 ^ D1 ^ ~D0`|
+|15|1111|`D3 ^ D2 ^ D1 ^ D0`|
+
+Assim:
+
+```c
+~G = (~D3 ^ ~D2 ^ ~D1 ^ ~D0)
+   v (~D3 ^ ~D2 ^ ~D1 ^ D0)
+   v (~D3 ^ D2 ^ D1 ^ D0)
+   v (D3 ^ ~D2 ^ ~D1 ^ D0)
+   v (D3 ^ ~D2 ^ D1 ^ ~D0)
+   v (D3 ^ ~D2 ^ D1 ^ D0)
+   v (D3 ^ D2 ^ ~D1 ^ ~D0)
+   v (D3 ^ D2 ^ ~D1 ^ D0)
+   v (D3 ^ D2 ^ D1 ^ ~D0)
+   v (D3 ^ D2 ^ D1 ^ D0)
+```
+
+#### Simplificação de `~G`
+
+**1. Mintermos 0 e 1:**
+
+```c
+(~D3 ^ ~D2 ^ ~D1 ^ ~D0) v (~D3 ^ ~D2 ^ ~D1 ^ D0)
+
+= ~D3 ^ ~D2 ^ ~D1 ^ (~D0 v D0)
+
+= ~D3 ^ ~D2 ^ ~D1
+```
+
+Foi usada a **Lei da Complementação**, `~D0 v D0 = 1`, seguida da **Lei da Identidade**, `X ^ 1 = X`.
+
+**2. Mintermos 1 e 9:**
+
+```c
+(~D3 ^ ~D2 ^ ~D1 ^ D0) v (D3 ^ ~D2 ^ ~D1 ^ D0)
+
+= ~D2 ^ ~D1 ^ D0 ^ (~D3 v D3)
+
+= ~D2 ^ ~D1 ^ D0
+```
+
+Assim, este agrupamento acrescenta o termo:
+
+```c
+~D2 ^ ~D1 ^ D0
+```
+
+**3. Mintermos 10 e 11:**
+
+```c
+(D3 ^ ~D2 ^ D1 ^ ~D0) v (D3 ^ ~D2 ^ D1 ^ D0)
+
+= D3 ^ ~D2 ^ D1 ^ (~D0 v D0)
+
+= D3 ^ ~D2 ^ D1
+```
+
+**4. Mintermos 12 e 13:**
+
+```c
+(D3 ^ D2 ^ ~D1 ^ ~D0) v (D3 ^ D2 ^ ~D1 ^ D0)
+
+= D3 ^ D2 ^ ~D1 ^ (~D0 v D0)
+
+= D3 ^ D2 ^ ~D1
+```
+
+**5. Mintermos 14 e 15:**
+
+```c
+(D3 ^ D2 ^ D1 ^ ~D0) v (D3 ^ D2 ^ D1 ^ D0)
+
+= D3 ^ D2 ^ D1 ^ (~D0 v D0)
+
+= D3 ^ D2 ^ D1
+```
+
+**6. Simplificando os termos com `D3`:**
+
+```c
+(D3 ^ ~D2 ^ D1)
+ v (D3 ^ D2 ^ ~D1)
+ v (D3 ^ D2 ^ D1)
+
+= D3 ^ [(~D2 ^ D1) v (D2 ^ ~D1) v (D2 ^ D1)]
+
+= D3 ^ [(~D2 ^ D1) v D2]
+
+= D3 ^ (D2 v D1)
+
+= (D3 ^ D2) v (D3 ^ D1)
+```
+
+**7. Incluindo o mintermo 7:**
+
+```c
+(D3 ^ D1) v (~D3 ^ D2 ^ D1 ^ D0)
+
+= D1 ^ [D3 v (~D3 ^ D2 ^ D0)]
+
+= D1 ^ (D3 v D2 ^ D0)
+
+= (D3 ^ D1) v (D1 ^ D2 ^ D0)
+```
+
+**Resultado obtido para `~G`:**
+
+```c
+~G = (~D3 ^ ~D2 ^ ~D1)
+   v (~D2 ^ ~D1 ^ D0)
+   v (D3 ^ D2)
+   v (D3 ^ D1)
+   v (D1 ^ D2 ^ D0)
+```
+
+### Obtendo `G` pela Lei de De Morgan
+
+Agora invertemos toda a expressão:
+
+```c
+G = ~(~G)
+```
+
+Aplicando a **Lei de De Morgan**:
+
+```c
+G = ~(~D3 ^ ~D2 ^ ~D1)
+  ^ ~(~D2 ^ ~D1 ^ D0)
+  ^ ~(D3 ^ D2)
+  ^ ~(D3 ^ D1)
+  ^ ~(D1 ^ D2 ^ D0)
+```
+
+Aplicando novamente De Morgan em cada termo:
+
+```c
+G = (D3 v D2 v D1)
+  ^ (D2 v D1 v ~D0)
+  ^ (~D3 v ~D2)
+  ^ (~D3 v ~D1)
+  ^ (~D1 v ~D2 v ~D0)
+```
+
+**RESULTADO FINAL:**
+
+```c
+G = (D3 v D2 v D1)
+  ^ (D2 v D1 v ~D0)
+  ^ (~D3 v ~D2)
+  ^ (~D3 v ~D1)
+  ^ (~D1 v ~D2 v ~D0)
+```
